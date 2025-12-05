@@ -22,5 +22,29 @@
     "DownloadLinkTesting": "https://github.com/xivdev/Penumbra/releases/download/1.4.0.1/Penumbra.zip",
     "DownloadLinkUpdate": "https://github.com/xivdev/Penumbra/releases/download/1.4.0.1/Penumbra.zip",
     "IconUrl": "https://raw.githubusercontent.com/xivdev/Penumbra/master/images/icon.png"
+  },
+  {
+    "Author": "Caraxi",
+    "Name": "Simple Tweaks",
+    "InternalName": "SimpleTweaksPlugin",
+    "AssemblyVersion": "1.10.10.0",
+    "TestingAssemblyVersion": "1.10.10.0",
+    "RepoUrl": "https://github.com/Caraxi/SimpleTweaksPlugin",
+    "ApplicableVersion": "any",
+    "Punchline": "This was supposed to be simple...",
+    "Description": "A collection of Quality of Life tweaks. Aiming to improve the experience without changing anything drastically. (API12 版本，適用於台服)",
+    "DalamudApiLevel": 12,
+    "TestingDalamudApiLevel": 12,
+    "IsHide": false,
+    "IsTestingExclusive": false,
+    "DownloadCount": 0,
+    "LastUpdate": 0,
+    "LoadPriority": 0,
+    "LoadRequiredState": 0,
+    "LoadSync": false,
+    "DownloadLinkInstall": "https://github.com/cycleapple/DalamudPlugins-TW/releases/download/plugins/SimpleTweaksPlugin.zip",
+    "DownloadLinkTesting": "https://github.com/cycleapple/DalamudPlugins-TW/releases/download/plugins/SimpleTweaksPlugin.zip",
+    "DownloadLinkUpdate": "https://github.com/cycleapple/DalamudPlugins-TW/releases/download/plugins/SimpleTweaksPlugin.zip",
+    "IconUrl": "https://raw.githubusercontent.com/Caraxi/SimpleTweaksPlugin/main/images/icon.png"
   }
 ]
