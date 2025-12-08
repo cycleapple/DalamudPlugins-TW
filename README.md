@@ -19,9 +19,10 @@ https://raw.githubusercontent.com/cycleapple/DalamudPlugins-TW/main/repo.json
 | 插件 | 版本 | 說明 |
 |------|------|------|
 | **Penumbra** | 9.0.0.1 | Mod 載入器與管理工具 |
-| **Simple Tweaks** | 1.10.10.0 | 各種生活品質改進功能 |
-| **Brio** | 0.5.1.2 | GPose 增強工具，用於拍照與動作控制 |
+| **Simple Heels** | 0.10.6.2 | 穿著 Mod 高跟鞋時調整角色位置 |
+| **Brio** | 0.5.1.0 | GPose 增強工具，用於拍照與動作控制 |
 | **Glamourer** | 1.4.0.1 | 外觀修改與儲存工具（需要 Penumbra）|
+| **Customize+** | 2.0.7.22 | 透過編輯骨骼參數自訂角色外觀 |
 
 ## 為什麼需要這個倉庫？
 
@@ -33,9 +34,10 @@ https://raw.githubusercontent.com/cycleapple/DalamudPlugins-TW/main/repo.json
 
 - [台服 Dalamud (yanmucorp)](https://github.com/yanmucorp/Dalamud)
 - [Penumbra 官方](https://github.com/xivdev/Penumbra)
-- [Simple Tweaks 官方](https://github.com/Caraxi/SimpleTweaksPlugin)
+- [Simple Heels 官方](https://github.com/Caraxi/SimpleHeels)
 - [Brio 官方](https://github.com/Etheirys/Brio)
 - [Glamourer 官方](https://github.com/Ottermandias/Glamourer)
+- [Customize+ 官方](https://github.com/Aether-Tools/CustomizePlus)
 
 ## 注意事項
 
