@@ -142,5 +142,28 @@
     "DownloadLinkTesting": "https://github.com/cycleapple/DalamudPlugins-TW/releases/download/plugins/Aetherment.zip",
     "DownloadLinkUpdate": "https://github.com/cycleapple/DalamudPlugins-TW/releases/download/plugins/Aetherment.zip",
     "IconUrl": "https://raw.githubusercontent.com/Sevii77/aetherment/main/plugin/images/icon.png"
+  },
+  {
+    "Author": "CY",
+    "Name": "PlayerWatchlist",
+    "InternalName": "PlayerWatchlist",
+    "AssemblyVersion": "1.0.0.0",
+    "TestingAssemblyVersion": "1.0.0.0",
+    "RepoUrl": "https://github.com/cycleapple/PlayerWatchlist",
+    "ApplicableVersion": "any",
+    "Punchline": "黑白名單玩家追蹤系統",
+    "Description": "管理黑名單和白名單玩家，當目標玩家在指定範圍內時顯示連結線並發送通知。支援右鍵選單快速添加。(API12 版本，適用於台服)",
+    "DalamudApiLevel": 12,
+    "TestingDalamudApiLevel": 12,
+    "IsHide": false,
+    "IsTestingExclusive": false,
+    "DownloadCount": 0,
+    "LastUpdate": 0,
+    "LoadPriority": 0,
+    "LoadRequiredState": 0,
+    "LoadSync": false,
+    "DownloadLinkInstall": "https://github.com/cycleapple/DalamudPlugins-TW/releases/download/plugins/PlayerWatchlist.zip",
+    "DownloadLinkTesting": "https://github.com/cycleapple/DalamudPlugins-TW/releases/download/plugins/PlayerWatchlist.zip",
+    "DownloadLinkUpdate": "https://github.com/cycleapple/DalamudPlugins-TW/releases/download/plugins/PlayerWatchlist.zip"
   }
 ]

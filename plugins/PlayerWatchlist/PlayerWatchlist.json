@@ -1,0 +1,16 @@
+{
+  "Author": "PlayerWatchlist",
+  "Name": "PlayerWatchlist",
+  "InternalName": "PlayerWatchlist",
+  "AssemblyVersion": "1.0.0.0",
+  "Description": "管理黑名單和白名單玩家，當目標玩家在指定範圍內時顯示連結線並發送通知。",
+  "ApplicableVersion": "any",
+  "RepoUrl": "",
+  "DalamudApiLevel": 12,
+  "LoadRequiredState": 0,
+  "LoadSync": false,
+  "CanUnloadAsync": false,
+  "LoadPriority": 0,
+  "Punchline": "黑白名單玩家追蹤系統",
+  "AcceptsFeedback": true
+}

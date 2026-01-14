@@ -24,6 +24,7 @@ https://raw.githubusercontent.com/cycleapple/DalamudPlugins-TW/main/repo.json
 | **Glamourer** | 1.4.0.1 | 外觀修改與儲存工具（需要 Penumbra）- **已修改支援中文名稱** |
 | **Customize+** | 2.0.7.22 | 透過編輯骨骼參數自訂角色外觀 - **已修改支援中文名稱** |
 | **Aetherment** | 0.3.3 | Mod 瀏覽、安裝與自動更新工具 |
+| **PlayerWatchlist** | 1.0.0.0 | 黑白名單玩家追蹤系統，偵測周圍玩家並顯示連結線與通知 |
 
 ## 為什麼需要這個倉庫？
 
@@ -40,6 +41,7 @@ https://raw.githubusercontent.com/cycleapple/DalamudPlugins-TW/main/repo.json
 - [Glamourer 官方](https://github.com/Ottermandias/Glamourer)
 - [Customize+ 官方](https://github.com/Aether-Tools/CustomizePlus)
 - [Aetherment 官方](https://github.com/Sevii77/aetherment)
+- [PlayerWatchlist](https://github.com/cycleapple/PlayerWatchlist)
 
 ## 修改說明
 
@@ -75,6 +77,21 @@ https://raw.githubusercontent.com/cycleapple/DalamudPlugins-TW/main/repo.json
 **Fork 來源：**
 - [cycleapple/CustomizePlus](https://github.com/cycleapple/CustomizePlus/tree/fix-non-western-clients)
 - [cycleapple/Penumbra.GameData](https://github.com/cycleapple/Penumbra.GameData/tree/fix-non-western-clients-cp)
+
+### PlayerWatchlist
+
+台服專用的黑白名單玩家追蹤系統。
+
+**功能：**
+- 管理黑名單和白名單玩家
+- 可為每個玩家添加備註原因
+- 設定偵測半徑
+- 當目標玩家在範圍內時顯示連結線（黑名單：紅色，白名單：綠色）
+- 發送聊天訊息和系統通知
+- 支援右鍵選單快速添加/移除
+
+**來源：**
+- [cycleapple/PlayerWatchlist](https://github.com/cycleapple/PlayerWatchlist)
 
 ## 注意事項
 
