@@ -165,5 +165,29 @@
     "DownloadLinkInstall": "https://github.com/cycleapple/DalamudPlugins-TW/releases/download/plugins/PlayerWatchlist.zip",
     "DownloadLinkTesting": "https://github.com/cycleapple/DalamudPlugins-TW/releases/download/plugins/PlayerWatchlist.zip",
     "DownloadLinkUpdate": "https://github.com/cycleapple/DalamudPlugins-TW/releases/download/plugins/PlayerWatchlist.zip"
+  },
+  {
+    "Author": "Loskh, Papachin, DethiCra",
+    "Name": "Action Timeline Replacement",
+    "InternalName": "ActionTimelineReplacement",
+    "AssemblyVersion": "1.0.0.0",
+    "TestingAssemblyVersion": "1.0.0.0",
+    "RepoUrl": "https://github.com/papapachin/ActionTimelineReplacement",
+    "ApplicableVersion": "any",
+    "Punchline": "A simple plugin to replace timelines of actions.",
+    "Description": "用於替換一些僅通過 mod 無法替換的動畫和特效，部分技能 mod 需要用到（例如 Papachin 的真維吉爾和但丁，Amon 的失落天堂，Bangja 的克勞德等）。(API12 版本，適用於台服)",
+    "DalamudApiLevel": 12,
+    "TestingDalamudApiLevel": 12,
+    "IsHide": false,
+    "IsTestingExclusive": false,
+    "DownloadCount": 0,
+    "LastUpdate": 0,
+    "LoadPriority": 0,
+    "LoadRequiredState": 0,
+    "LoadSync": false,
+    "DownloadLinkInstall": "https://github.com/cycleapple/DalamudPlugins-TW/releases/download/plugins/ActionTimelineReplacement.zip",
+    "DownloadLinkTesting": "https://github.com/cycleapple/DalamudPlugins-TW/releases/download/plugins/ActionTimelineReplacement.zip",
+    "DownloadLinkUpdate": "https://github.com/cycleapple/DalamudPlugins-TW/releases/download/plugins/ActionTimelineReplacement.zip",
+    "IconUrl": "https://raw.githubusercontent.com/papapachin/ActionTimelineReplacement/Global/actiontimeline.png"
   }
 ]

@@ -25,6 +25,7 @@ https://raw.githubusercontent.com/cycleapple/DalamudPlugins-TW/main/repo.json
 | **Customize+** | 2.0.7.22 | 透過編輯骨骼參數自訂角色外觀 - **已修改支援中文名稱** |
 | **Aetherment** | 0.3.3 | Mod 瀏覽、安裝與自動更新工具 |
 | **PlayerWatchlist** | 1.0.0.0 | 黑白名單玩家追蹤系統，偵測周圍玩家並顯示連結線與通知 |
+| **Action Timeline Replacement** | 1.0.0.0 | 部分特效 MOD 使用，用於替換動畫和特效 |
 
 ## 為什麼需要這個倉庫？
 
@@ -42,6 +43,7 @@ https://raw.githubusercontent.com/cycleapple/DalamudPlugins-TW/main/repo.json
 - [Customize+ 官方](https://github.com/Aether-Tools/CustomizePlus)
 - [Aetherment 官方](https://github.com/Sevii77/aetherment)
 - [PlayerWatchlist](https://github.com/cycleapple/PlayerWatchlist)
+- [Action Timeline Replacement](https://github.com/papapachin/ActionTimelineReplacement)
 
 ## 修改說明
 
@@ -92,6 +94,19 @@ https://raw.githubusercontent.com/cycleapple/DalamudPlugins-TW/main/repo.json
 
 **來源：**
 - [cycleapple/PlayerWatchlist](https://github.com/cycleapple/PlayerWatchlist)
+
+### Action Timeline Replacement
+
+用於替換一些僅通過 mod 無法替換的動畫和特效，部分技能 mod 需要用到。
+
+**適用場景：**
+- Papachin 的真維吉爾和但丁
+- Amon 的失落天堂
+- Bangja 的克勞德
+- 其他需要替換動畫時間線的 mod
+
+**來源：**
+- [papapachin/ActionTimelineReplacement](https://github.com/papapachin/ActionTimelineReplacement)
 
 ## 注意事項
 
