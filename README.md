@@ -1,6 +1,6 @@
 # DalamudPlugins-TW
 
-台服 FFXIV 專用的 Dalamud 插件倉庫，提供 API12 版本的插件。
+台服 FFXIV 專用的 Dalamud 插件倉庫，提供 API13 相容版本的插件。
 
 ## 使用方式
 
@@ -18,20 +18,21 @@ https://raw.githubusercontent.com/cycleapple/DalamudPlugins-TW/main/repo.json
 
 | 插件 | 版本 | 說明 |
 |------|------|------|
-| **Penumbra** | 9.0.0.1 | Mod 載入器與管理工具 |
-| **Simple Heels** | 0.10.6.2 | 穿著 Mod 高跟鞋時調整角色位置 |
-| **Brio** | 0.5.1.0 | GPose 增強工具，用於拍照與動作控制 |
-| **Glamourer** | 1.4.0.1 | 外觀修改與儲存工具（需要 Penumbra）- **已修改支援中文名稱** |
-| **Customize+** | 2.0.7.22 | 透過編輯骨骼參數自訂角色外觀 - **已修改支援中文名稱** |
-| **Aetherment** | 0.3.3 | Mod 瀏覽、安裝與自動更新工具 |
-| **PlayerWatchlist** | 1.0.0.0 | 黑白名單玩家追蹤系統，偵測周圍玩家並顯示連結線與通知 |
-| **Action Timeline Replacement** | 1.0.0.0 | 部分特效 MOD 使用，用於替換動畫和特效 |
+| **Penumbra** | 1.5.0.1 | Mod 載入器與管理工具 |
+| **Simple Heels** | 0.10.7.4 | 穿著 Mod 高跟鞋時調整角色位置 |
+| **Brio** | 0.5.2.0 | GPose 增強工具，用於拍照與動作控制 |
+| **Glamourer** | 1.5.0.1 | 外觀修改與儲存工具（需要 Penumbra）- **已修改支援中文名稱** |
+| **Customize+** | 2.0.7.23 | 透過編輯骨骼參數自訂角色外觀 - **已修改支援中文名稱** |
+| **Aetherment** | 0.4.0.0 | Mod 瀏覽、安裝與自動更新工具 |
+| **PlayerWatchlist** | 1.0.0.1 | 黑白名單玩家追蹤系統，偵測周圍玩家並顯示連結線與通知 |
+| **Action Timeline Replacement** | 1.0.0.1 | 部分特效 MOD 使用，用於替換動畫和特效 |
+| **Simple Tweaks** | 1.10.11.1 | 多項可設定的遊戲便利性調整 |
 
 ## 為什麼需要這個倉庫？
 
-台服使用的 Dalamud 版本為 API12，而官方插件倉庫已更新至 API13。這導致許多插件無法在台服上使用。
+台服使用的 Dalamud 版本為 API13，而多數上游插件已更新至較新的 API。直接使用上游最新版本會因 API 不相容而無法載入。
 
-本倉庫提供這些插件的 API12 相容版本，讓台服玩家也能使用這些實用的插件。
+本倉庫固定在各插件的 API13 上游版本，並套用台服需要的相容性修正。
 
 ## 相關連結
 
@@ -110,7 +111,7 @@ https://raw.githubusercontent.com/cycleapple/DalamudPlugins-TW/main/repo.json
 
 ## 注意事項
 
-- 這些插件是從官方源碼編譯的 API12 版本
+- 這些插件是從官方 API13 源碼分支編譯的版本
 - Glamourer 和 Customize+ 經過修改以支援中文名稱
 - 版本可能落後於官方最新版本
 - 如有問題請在 Issues 中回報
