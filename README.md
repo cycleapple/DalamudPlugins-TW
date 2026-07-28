@@ -16,6 +16,10 @@ https://raw.githubusercontent.com/cycleapple/DalamudPlugins-TW/main/repo.json
 
 4. 儲存後即可在插件安裝器中看到這些插件
 
+## 支持維護
+
+如果這個插件倉庫對你有幫助，歡迎[請我喝一杯咖啡](https://portaly.cc/thecy) ☕
+
 ## 可用插件
 
 | 插件 | 版本 | 說明 |
