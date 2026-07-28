@@ -21,7 +21,7 @@ https://raw.githubusercontent.com/cycleapple/DalamudPlugins-TW/main/repo.json
 | **Penumbra** | 1.5.0.2 | Mod 載入器與管理工具（停用台服不存在的陽傘動畫 Hook） |
 | **Simple Heels** | 0.10.7.4 | 穿著 Mod 高跟鞋時調整角色位置 |
 | **Brio** | 0.5.2.0 | GPose 增強工具，用於拍照與動作控制 |
-| **Glamourer** | 1.5.0.1 | 外觀修改與儲存工具（需要 Penumbra）- **已修改支援中文名稱** |
+| **Glamourer** | 1.5.0.2 | 外觀修改與儲存工具（需要 Penumbra）- **已修正台服 Excel 語言相容性** |
 | **Customize+** | 2.0.7.23 | 透過編輯骨骼參數自訂角色外觀 - **已修改支援中文名稱** |
 | **Aetherment** | 0.4.0.0 | Mod 瀏覽、安裝與自動更新工具 |
 | **PlayerWatchlist** | 1.0.0.1 | 黑白名單玩家追蹤系統，偵測周圍玩家並顯示連結線與通知 |
