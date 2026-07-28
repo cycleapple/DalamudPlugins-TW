@@ -18,11 +18,11 @@ https://raw.githubusercontent.com/cycleapple/DalamudPlugins-TW/main/repo.json
 
 | 插件 | 版本 | 說明 |
 |------|------|------|
-| **Penumbra** | 1.5.0.6 | Mod 載入器與管理工具（修正台服特徵碼並讀取 TC 繁中 Excel 頁） |
+| **Penumbra** | 1.5.0.7 | Mod 載入器與管理工具（修正台服特徵碼並讀取 TC 繁中 Excel 頁） |
 | **Simple Heels** | 0.10.7.4 | 穿著 Mod 高跟鞋時調整角色位置 |
 | **Brio** | 0.5.2.0 | GPose 增強工具，用於拍照與動作控制 |
-| **Glamourer** | 1.5.0.5 | 外觀修改與儲存工具（需要 Penumbra）- **已修正台服 TC 繁中 Excel 語言頁** |
-| **Customize+** | 2.0.7.26 | 透過編輯骨骼參數自訂角色外觀 - **已修正台服 TC 繁中 Excel 語言頁** |
+| **Glamourer** | 1.5.0.6 | 外觀修改與儲存工具（需要 Penumbra）- **已修正台服 TC 繁中 Excel 語言頁** |
+| **Customize+** | 2.0.7.27 | 透過編輯骨骼參數自訂角色外觀 - **已修正台服 TC 繁中 Excel 語言頁** |
 | **Aetherment** | 0.4.0.0 | Mod 瀏覽、安裝與自動更新工具 |
 | **PlayerWatchlist** | 1.0.0.1 | 黑白名單玩家追蹤系統，偵測周圍玩家並顯示連結線與通知 |
 | **Action Timeline Replacement** | 1.0.0.1 | 部分特效 MOD 使用，用於替換動畫和特效 |
