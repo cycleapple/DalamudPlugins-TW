@@ -18,7 +18,7 @@ https://raw.githubusercontent.com/cycleapple/DalamudPlugins-TW/main/repo.json
 
 | 插件 | 版本 | 說明 |
 |------|------|------|
-| **Penumbra** | 1.5.0.2 | Mod 載入器與管理工具（停用台服不存在的陽傘動畫 Hook） |
+| **Penumbra** | 1.5.0.3 | Mod 載入器與管理工具（修正台服特徵碼與 Excel 語言相容性） |
 | **Simple Heels** | 0.10.7.4 | 穿著 Mod 高跟鞋時調整角色位置 |
 | **Brio** | 0.5.2.0 | GPose 增強工具，用於拍照與動作控制 |
 | **Glamourer** | 1.5.0.2 | 外觀修改與儲存工具（需要 Penumbra）- **已修正台服 Excel 語言相容性** |
