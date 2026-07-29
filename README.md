@@ -38,6 +38,8 @@ https://raw.githubusercontent.com/cycleapple/DalamudPlugins-TW/main/repo.json
 | **Action Timeline Replacement** | 1.0.0.1 | 部分特效 MOD 使用，用於替換動畫和特效 |
 | **Simple Tweaks** | 1.10.11.1 | 多項可設定的遊戲便利性調整 |
 | **Loporrit Sync** | 1.0.9.2 | 與配對玩家同步 Penumbra Mod 與 Glamourer 外觀（需要 Penumbra 1.5.1.21、Glamourer 1.5.0.7） |
+| **Title Edit** | 3.0.6.20 | 建立、分享並切換自訂標題與角色選擇畫面（2025-12-07 API13 節點） |
+| **MonsterDex** | 2.13.6.1 | 顯示深層迷宮魔物資料與攻略提示，內含繁中資料（2025-10-29 API13 節點） |
 
 ## 為什麼需要這個倉庫？
 
