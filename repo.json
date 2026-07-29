@@ -309,5 +309,28 @@
     "DownloadLinkTesting": "https://github.com/cycleapple/DalamudPlugins-TW/releases/download/plugins-api13/MonsterDex-2.13.6.1.zip",
     "DownloadLinkUpdate": "https://github.com/cycleapple/DalamudPlugins-TW/releases/download/plugins-api13/MonsterDex-2.13.6.1.zip",
     "IconUrl": "https://raw.githubusercontent.com/cycleapple/MonsterDex/api13-tw/DeepDungeonDex/icon.png"
+  },
+  {
+    "Author": "ItsLunaYup",
+    "Name": "High FPS Physics Fix",
+    "InternalName": "HighFpsPhysicsPlugin",
+    "AssemblyVersion": "8.3.0.1",
+    "TestingAssemblyVersion": "8.3.0.1",
+    "RepoUrl": "https://github.com/cycleapple/xivlauncher_physics_plugin/tree/api13-tw",
+    "ApplicableVersion": "any",
+    "Punchline": "降低動作物理效果的更新頻率，改善高 FPS 下的物理表現。",
+    "Description": "讓遊戲每隔數幀才更新一次物理效果，以改善高 FPS 下的物理表現。採用 2025-08-06 的上游 API13 節點，並加入繁中介面。",
+    "DalamudApiLevel": 13,
+    "TestingDalamudApiLevel": 13,
+    "IsHide": false,
+    "IsTestingExclusive": false,
+    "DownloadCount": 0,
+    "LastUpdate": 0,
+    "LoadPriority": 0,
+    "LoadRequiredState": 0,
+    "LoadSync": false,
+    "DownloadLinkInstall": "https://github.com/cycleapple/DalamudPlugins-TW/releases/download/plugins-api13/HighFpsPhysicsPlugin-8.3.0.1.zip",
+    "DownloadLinkTesting": "https://github.com/cycleapple/DalamudPlugins-TW/releases/download/plugins-api13/HighFpsPhysicsPlugin-8.3.0.1.zip",
+    "DownloadLinkUpdate": "https://github.com/cycleapple/DalamudPlugins-TW/releases/download/plugins-api13/HighFpsPhysicsPlugin-8.3.0.1.zip"
   }
 ]
