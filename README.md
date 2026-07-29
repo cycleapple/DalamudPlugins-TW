@@ -24,7 +24,7 @@ https://raw.githubusercontent.com/cycleapple/DalamudPlugins-TW/main/repo.json
 
 | 插件 | 版本 | 說明 |
 |------|------|------|
-| **Penumbra** | 1.5.0.12 | Mod 載入器與管理工具（修正 TC 特徵碼、繁中 Excel 與 shader handle 誤判） |
+| **Penumbra** | 1.5.0.13 | Mod 載入器與管理工具（修正 TC 特徵碼、繁中 Excel、shader handle 誤判與空資源路徑） |
 | **Simple Heels** | 0.10.7.4 | 穿著 Mod 高跟鞋時調整角色位置 |
 | **Brio** | 0.5.2.0 | GPose 增強工具，用於拍照與動作控制 |
 | **Glamourer** | 1.5.0.7 | 外觀修改與儲存工具（需要 Penumbra）- **已修正台服 TC 繁中 Excel 語言頁** |
@@ -65,7 +65,7 @@ https://raw.githubusercontent.com/cycleapple/DalamudPlugins-TW/main/repo.json
 
 ### Penumbra
 
-目前正式版本為 `1.5.0.12`，來源位於 [cycleapple/Penumbra 的 api13-tw 分支](https://github.com/cycleapple/Penumbra/tree/api13-tw)。
+目前正式版本為 `1.5.0.13`，來源位於 [cycleapple/Penumbra 的 api13-tw 分支](https://github.com/cycleapple/Penumbra/tree/api13-tw)。
 
 修改內容：
 
@@ -75,8 +75,9 @@ https://raw.githubusercontent.com/cycleapple/DalamudPlugins-TW/main/repo.json
 - 停用台服客戶端不存在的非必要 parasol animation hook
 - 修正 TC 內建 SHPK handle 被誤判為 modded shader 的問題
 - 保留真正由本機 Mod 替換的 SHPK 處理功能
+- 移植上游 `12a218bb` 的空資源路徑保護，在進入 SqPack loader 前拒絕無效請求
 
-`1.5.0.12` 的 shader 修正會同時檢查資源是否來自本機磁碟的絕對路徑。TC 內建 shader 即使使用了不同的 resource handle，也不會再被錯誤加入 modded shader 慢路徑。這項誤判是先前選角後於 `ffxiv_dx11.exe` renderer 執行緒崩潰的原因之一。
+`1.5.0.13` 保留 `1.5.0.12` 的 shader 修正，同時補回上游 `1.5.0.5` 起已有、但先前台服分支缺少的空路徑防護。TC 內建 shader 即使使用了不同的 resource handle，也不會再被錯誤加入 modded shader 慢路徑；空路徑也不會繼續傳入 SqPack 資源載入流程。
 
 如需緊急回退，GitHub Release 中仍保留停用 Shader Replacement Fixer 的 `1.5.0.11`。
 
