@@ -5,7 +5,7 @@
 目前正式版已針對台服 Dalamud API13、繁體中文 Excel 資料及部分台服客戶端結構差異進行調整。這不是上游最新版鏡像，請勿直接以 API14 或更新版本的上游二進位檔覆蓋。
 
 > [!WARNING]
-> Penumbra、Glamourer、Loporrit Sync 等會攔截資源載入或同步外觀資料，風險高於一般介面插件。請整套使用本倉庫列出的相容版本；不要混用上游 API14 DLL，並在更新前保留可回退版本。
+> Penumbra、Glamourer、Ktisis、Loporrit Sync 等會攔截資源載入、修改角色／場景狀態或同步外觀資料，風險高於一般介面插件。請整套使用本倉庫列出的相容版本；不要混用上游 API14 DLL，並在更新前保留可回退版本。
 
 ## 使用方式
 
@@ -30,6 +30,7 @@ https://raw.githubusercontent.com/cycleapple/DalamudPlugins-TW/main/repo.json
 | **Penumbra** | 1.5.1.21 | Mod 載入器與管理工具（API13 上游 1.5.1.1 基底；修正 TC 結構、繁中 Excel、shader handle 誤判、空資源路徑與台服 repo 來源警告） |
 | **Simple Heels** | 0.10.7.4 | 穿著 Mod 高跟鞋時調整角色位置 |
 | **Brio** | 0.5.2.0 | GPose 增強工具，用於拍照與動作控制 |
+| **Ktisis v0.3** | 0.3.14.1 | 集體動作模式的場景、角色姿勢、鏡頭與燈光編輯工具（2025-12-06 API13 節點） |
 | **Glamourer** | 1.5.0.7 | 外觀修改與儲存工具（需要 Penumbra）- **已修正台服 TC 繁中 Excel 語言頁** |
 | **Customize+** | 2.0.7.28 | 透過編輯骨骼參數自訂角色外觀 - **已修正台服 TC 繁中 Excel 語言頁** |
 | **Aetherment** | 0.4.0.0 | Mod 瀏覽、安裝與自動更新工具 |
