@@ -32,7 +32,7 @@ https://raw.githubusercontent.com/cycleapple/DalamudPlugins-TW/main/repo.json
 | **Brio** | 0.5.2.0 | GPose 增強工具，用於拍照與動作控制 |
 | **Ktisis v0.3** | 0.3.14.1 | 集體動作模式的場景、角色姿勢、鏡頭與燈光編輯工具（2025-12-06 API13 節點） |
 | **Glamourer** | 1.5.0.9 | 外觀修改與儲存工具（需要 Penumbra）- **已修正台服 TC 繁中 Excel 語言頁與即時玩家辨識** |
-| **Customize+** | 2.0.7.28 | 透過編輯骨骼參數自訂角色外觀 - **已修正台服 TC 繁中 Excel 語言頁** |
+| **Customize+** | 2.0.7.29 | 透過編輯骨骼參數自訂角色外觀 - **已修正台服角色世界 ID 驗證** |
 | **Aetherment** | 0.4.0.0 | Mod 瀏覽、安裝與自動更新工具 |
 | **PlayerWatchlist** | 1.0.0.1 | 黑白名單玩家追蹤系統，偵測周圍玩家並顯示連結線與通知 |
 | **Action Timeline Replacement** | 1.0.0.1 | 部分特效 MOD 使用，用於替換動畫和特效 |
@@ -134,11 +134,12 @@ Fork 來源：
 修改內容：
 
 - 修復中文/台服客戶端無法偵測玩家角色的問題
-- 與 Glamourer 相同的問題和修復方式
+- 角色世界 ID 不再要求存在於 Dalamud 公開世界清單
+- 保留角色名稱格式驗證，並拒絕無效的世界 ID `0`
 
 修改的檔案：
 
-- `Penumbra.GameData/Interop/Actor.cs` - 關閉嚴格的名稱/世界驗證
+- `Penumbra.GameData/Actors/ActorIdentifierFactory.cs` - 移除世界清單相依，只驗證世界 ID 非 `0`
 
 Fork 來源：
 
