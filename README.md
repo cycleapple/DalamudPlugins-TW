@@ -5,7 +5,7 @@
 目前正式版已針對台服 Dalamud API13、繁體中文 Excel 資料及部分台服客戶端結構差異進行調整。這不是上游最新版鏡像，請勿直接以 API14 或更新版本的上游二進位檔覆蓋。
 
 > [!WARNING]
-> Penumbra、Glamourer、Ktisis、Loporrit Sync、High FPS Physics Fix 等會攔截資源載入、修改角色／場景狀態、同步外觀資料或 Hook 遊戲函式，風險高於一般介面插件。請整套使用本倉庫列出的相容版本；不要混用上游 API14 DLL，並在更新前保留可回退版本。
+> Penumbra、Glamourer、Ktisis、Loporrit Sync、High FPS Physics Fix、Orchestrion、CrossUp 等會攔截資源載入、修改角色／場景／音訊／快捷欄狀態、同步外觀資料或 Hook 遊戲函式，風險高於一般介面插件。請整套使用本倉庫列出的相容版本；不要混用上游 API14 DLL，並在更新前保留可回退版本。
 
 ## 使用方式
 
@@ -41,6 +41,8 @@ https://raw.githubusercontent.com/cycleapple/DalamudPlugins-TW/main/repo.json
 | **Title Edit** | 3.0.6.20 | 建立、分享並切換自訂標題與角色選擇畫面（2025-12-07 API13 節點） |
 | **MonsterDex** | 2.13.6.1 | 顯示深層迷宮魔物資料與攻略提示，內含繁中資料（2025-10-29 API13 節點） |
 | **High FPS Physics Fix** | 8.3.0.1 | 降低物理效果更新頻率，改善高 FPS 下的物理表現（2025-08-06 API13 節點，繁中介面） |
+| **Orchestrion Plugin** | 2.2.0.12 | 瀏覽、辨識及變更遊戲內背景音樂（2025-08-07 API13 節點） |
+| **CrossUp** | 1.7.1.13 | 自訂十字快捷欄的外觀、位置與擴展按住操作（2025-09-03 API13／7.31 節點） |
 
 ## 為什麼需要這個倉庫？
 
