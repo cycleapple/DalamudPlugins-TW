@@ -27,7 +27,7 @@ https://raw.githubusercontent.com/cycleapple/DalamudPlugins-TW/main/repo.json
 
 | 插件 | 版本 | 說明 |
 |------|------|------|
-| **Penumbra** | 1.5.1.22 | Mod 載入器與管理工具（API13 上游 1.5.1.1 基底；修正 TC 結構、繁中 Excel、shader handle 誤判、空資源路徑、一般 ZIP／PMP 匯入與台服 repo 來源警告） |
+| **Penumbra** | 1.5.1.23 | Mod 載入器與管理工具（API13 上游 1.5.1.1 基底；修正 TC 結構、繁中 Excel、shader handle 誤判、空資源路徑、一般 ZIP／PMP 匯入，並可唯讀載入新版 V4 模組） |
 | **Simple Heels** | 0.10.7.4 | 穿著 Mod 高跟鞋時調整角色位置 |
 | **Brio** | 0.5.2.0 | GPose 增強工具，用於拍照與動作控制 |
 | **Ktisis v0.3** | 0.3.14.4 | 集體動作模式的場景、角色姿勢、鏡頭與燈光編輯工具；修正舊設定遷移尚未載入及設定空區段造成的設定視窗崩潰 |
@@ -37,7 +37,7 @@ https://raw.githubusercontent.com/cycleapple/DalamudPlugins-TW/main/repo.json
 | **PlayerWatchlist** | 1.0.0.1 | 黑白名單玩家追蹤系統，偵測周圍玩家並顯示連結線與通知 |
 | **Action Timeline Replacement** | 1.0.0.1 | 部分特效 MOD 使用，用於替換動畫和特效 |
 | **Simple Tweaks** | 1.10.11.1 | 多項可設定的遊戲便利性調整 |
-| **Loporrit Sync** | 1.0.9.2 | 與配對玩家同步 Penumbra Mod 與 Glamourer 外觀（需要 Penumbra 1.5.1.22、Glamourer 1.5.0.9） |
+| **Loporrit Sync** | 1.0.9.2 | 與配對玩家同步 Penumbra Mod 與 Glamourer 外觀（需要 Penumbra 1.5.1.23、Glamourer 1.5.0.9） |
 
 ## 為什麼需要這個倉庫？
 
@@ -71,7 +71,7 @@ https://raw.githubusercontent.com/cycleapple/DalamudPlugins-TW/main/repo.json
 
 ### Penumbra
 
-目前正式版本為 `1.5.1.22`，以 2025-08-28 發布、仍使用 Dalamud API13 的上游 `1.5.1.1` 為基礎，來源位於 [cycleapple/Penumbra 的 api13-tw-1.5.1 分支](https://github.com/cycleapple/Penumbra/tree/api13-tw-1.5.1)。
+目前正式版本為 `1.5.1.23`，以 2025-08-28 發布、仍使用 Dalamud API13 的上游 `1.5.1.1` 為基礎，來源位於 [cycleapple/Penumbra 的 api13-tw-1.5.1 分支](https://github.com/cycleapple/Penumbra/tree/api13-tw-1.5.1)。
 
 修改內容：
 
@@ -85,8 +85,10 @@ https://raw.githubusercontent.com/cycleapple/DalamudPlugins-TW/main/repo.json
 - 使用 Penumbra.Api `5.12.0`，提供 Loporrit Sync 所需的 PCP、暫時集合及資源路徑 IPC
 - 將 SharpCompress 更新至修補路徑穿越弱點的 `0.48.0`
 - 回移上游 SharpCompress 讀取回歸修正：一般 ZIP／PMP 逐項解壓，solid／7z 才使用 `ExtractAllEntries()`
+- 回移上游 V4 模組唯讀相容層：讀取新版 Penumbra 內嵌於 `meta.json` 的預設資料與選項群組
+- 禁止 API13 版本覆寫 V4 模組，並拒絕尚未支援的 V5 以上格式，避免破壞國際服新版 Penumbra 的資料
 
-`1.5.1.22` 保留既有台服 shader 與空路徑修正，並修正 SharpCompress 0.48 對一般 ZIP／PMP 呼叫 `ExtractAllEntries()` 時會拒絕匯入的問題。TC 內建 shader 即使使用了不同的 resource handle，也不會再被錯誤加入 modded shader 慢路徑；空路徑也不會繼續傳入 SqPack 資源載入流程，且由本倉庫安裝正式版時不再誤顯示非官方來源警告。
+`1.5.1.23` 保留既有台服 shader、空路徑與 ZIP／PMP 匯入修正，並加入新版 Penumbra V4 模組的唯讀載入能力。V3 模組仍沿用原本的檔案與儲存流程；V4 模組可讀取內嵌預設資料及選項群組，但本版本不會寫回 V4 模組。若模組宣告 API13 不支援的新功能，仍會安全地拒絕載入，而不會靜默套用不完整內容。
 
 如需緊急回退，GitHub Release 中仍保留 `1.5.0.13` 與停用 Shader Replacement Fixer 的 `1.5.0.11`；但 Loporrit Sync 不支援回退到 `1.5.0.x`。
 
@@ -96,7 +98,7 @@ https://raw.githubusercontent.com/cycleapple/DalamudPlugins-TW/main/repo.json
 
 - 保留上游原始的 `Penumbra >= 1.5.1.0` 相容性條件
 - 已用台服 Dalamud `13.0.0.8` 編譯
-- 需要本倉庫的 Penumbra `1.5.1.22` 與 Glamourer `1.5.0.9`
+- 需要本倉庫的 Penumbra `1.5.1.23` 與 Glamourer `1.5.0.9`
 - SignalR、MessagePack 與 Hosting 相依套件已更新至 `9.0.18`，NuGet 弱點掃描無已知項目
 
 ### Glamourer
