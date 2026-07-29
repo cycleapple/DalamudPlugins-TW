@@ -31,13 +31,13 @@ https://raw.githubusercontent.com/cycleapple/DalamudPlugins-TW/main/repo.json
 | **Simple Heels** | 0.10.7.4 | 穿著 Mod 高跟鞋時調整角色位置 |
 | **Brio** | 0.5.2.0 | GPose 增強工具，用於拍照與動作控制 |
 | **Ktisis v0.3** | 0.3.14.1 | 集體動作模式的場景、角色姿勢、鏡頭與燈光編輯工具（2025-12-06 API13 節點） |
-| **Glamourer** | 1.5.0.7 | 外觀修改與儲存工具（需要 Penumbra）- **已修正台服 TC 繁中 Excel 語言頁** |
+| **Glamourer** | 1.5.0.8 | 外觀修改與儲存工具（需要 Penumbra）- **已修正台服 TC 繁中 Excel 語言頁與玩家名稱辨識** |
 | **Customize+** | 2.0.7.28 | 透過編輯骨骼參數自訂角色外觀 - **已修正台服 TC 繁中 Excel 語言頁** |
 | **Aetherment** | 0.4.0.0 | Mod 瀏覽、安裝與自動更新工具 |
 | **PlayerWatchlist** | 1.0.0.1 | 黑白名單玩家追蹤系統，偵測周圍玩家並顯示連結線與通知 |
 | **Action Timeline Replacement** | 1.0.0.1 | 部分特效 MOD 使用，用於替換動畫和特效 |
 | **Simple Tweaks** | 1.10.11.1 | 多項可設定的遊戲便利性調整 |
-| **Loporrit Sync** | 1.0.9.2 | 與配對玩家同步 Penumbra Mod 與 Glamourer 外觀（需要 Penumbra 1.5.1.21、Glamourer 1.5.0.7） |
+| **Loporrit Sync** | 1.0.9.2 | 與配對玩家同步 Penumbra Mod 與 Glamourer 外觀（需要 Penumbra 1.5.1.21、Glamourer 1.5.0.8） |
 | **Title Edit** | 3.0.6.20 | 建立、分享並切換自訂標題與角色選擇畫面（2025-12-07 API13 節點） |
 | **MonsterDex** | 2.13.6.1 | 顯示深層迷宮魔物資料與攻略提示，內含繁中資料（2025-10-29 API13 節點） |
 | **High FPS Physics Fix** | 8.3.0.1 | 降低物理效果更新頻率，改善高 FPS 下的物理表現（2025-08-06 API13 節點，繁中介面） |
@@ -100,30 +100,31 @@ https://raw.githubusercontent.com/cycleapple/DalamudPlugins-TW/main/repo.json
 
 - 保留上游原始的 `Penumbra >= 1.5.1.0` 相容性條件
 - 已用台服 Dalamud `13.0.0.8` 編譯
-- 需要本倉庫的 Penumbra `1.5.1.21` 與 Glamourer `1.5.0.7`
+- 需要本倉庫的 Penumbra `1.5.1.21` 與 Glamourer `1.5.0.8`
 - SignalR、MessagePack 與 Hosting 相依套件已更新至 `9.0.18`，NuGet 弱點掃描無已知項目
 
 ### Glamourer
 
-此版本的 Glamourer 是基於 [Ottermandias/Glamourer v1.4.0.1](https://github.com/Ottermandias/Glamourer/releases/tag/1.4.0.1) 修改而成。
+此版本的 Glamourer 使用 API13 安全節點為基礎，並針對台服客戶端調整玩家辨識。
 
 修改內容：
 
-- 修復中文/台服客戶端無法偵測玩家角色的問題
-- 原版僅顯示 NPC，不顯示 LocalPlayer 和其他玩家
+- 修復中文/台服客戶端無法偵測部分玩家角色的問題
+- 保留世界與角色資料驗證，不使用全面略過驗證的舊作法
+- 支援台服單段名稱、無空格小寫拉丁字母、英數混合與罕見 CJK 字元
 
 問題原因：
 
-原版的 `VerifyPlayerName()` 僅接受西方字母 (a-z)，導致中文名稱驗證失敗。
+本地化單段名稱的舊驗證規則限制過窄，部分合法台服名稱會被誤判。新版依台服最多 6 個 Unicode 字元的限制驗證，接受 Unicode 字母、數字與名稱中點。
 
 修改的檔案：
 
-- `Penumbra.GameData/Interop/Actor.cs` - 關閉嚴格的名稱/世界驗證
+- `Penumbra.GameData/Actors/ActorIdentifierFactory.cs` - 修正本地化玩家名稱驗證
 
 Fork 來源：
 
-- [cycleapple/Glamourer](https://github.com/cycleapple/Glamourer/tree/fix-player-detection)
-- [cycleapple/Penumbra.GameData](https://github.com/cycleapple/Penumbra.GameData/tree/fix-non-western-clients)
+- [cycleapple/Glamourer](https://github.com/cycleapple/Glamourer/tree/api13-tw)
+- [cycleapple/Penumbra.GameData](https://github.com/cycleapple/Penumbra.GameData/tree/api13-tw-glamourer)
 
 ### Customize+
 
