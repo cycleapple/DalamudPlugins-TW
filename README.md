@@ -5,7 +5,7 @@
 目前正式版已針對台服 Dalamud API13、繁體中文 Excel 資料及部分台服客戶端結構差異進行調整。這不是上游最新版鏡像，請勿直接以 API14 或更新版本的上游二進位檔覆蓋。
 
 > [!WARNING]
-> Penumbra、Glamourer、Ktisis、Loporrit Sync、High FPS Physics Fix、Orchestrion、CrossUp 等會攔截資源載入、修改角色／場景／音訊／快捷欄狀態、同步外觀資料或 Hook 遊戲函式，風險高於一般介面插件。請整套使用本倉庫列出的相容版本；不要混用上游 API14 DLL，並在更新前保留可回退版本。
+> Penumbra、Glamourer、Ktisis、Loporrit Sync 等會攔截資源載入、修改角色／場景／音訊／快捷欄狀態、同步外觀資料或 Hook 遊戲函式，風險高於一般介面插件。請整套使用本倉庫列出的相容版本；不要混用上游 API14 DLL，並在更新前保留可回退版本。
 
 ## 使用方式
 
@@ -38,14 +38,6 @@ https://raw.githubusercontent.com/cycleapple/DalamudPlugins-TW/main/repo.json
 | **Action Timeline Replacement** | 1.0.0.1 | 部分特效 MOD 使用，用於替換動畫和特效 |
 | **Simple Tweaks** | 1.10.11.1 | 多項可設定的遊戲便利性調整 |
 | **Loporrit Sync** | 1.0.9.2 | 與配對玩家同步 Penumbra Mod 與 Glamourer 外觀（需要 Penumbra 1.5.1.21、Glamourer 1.5.0.9） |
-| **Title Edit** | 3.0.6.20 | 建立、分享並切換自訂標題與角色選擇畫面（2025-12-07 API13 節點） |
-| **MonsterDex** | 2.13.6.1 | 顯示深層迷宮魔物資料與攻略提示，內含繁中資料（2025-10-29 API13 節點） |
-| **High FPS Physics Fix** | 8.3.0.1 | 降低物理效果更新頻率，改善高 FPS 下的物理表現（2025-08-06 API13 節點，繁中介面） |
-| **Orchestrion Plugin** | 2.2.0.12 | 瀏覽、辨識及變更遊戲內背景音樂（2025-08-07 API13 節點） |
-| **CrossUp** | 1.7.1.13 | 自訂十字快捷欄的外觀、位置與擴展按住操作（2025-09-03 API13／7.31 節點） |
-| **TriadBuddy** | 1.13.0.1 | 九宮幻卡 NPC 對戰求解、牌組分析與收藏資訊擴充（2025-08-11 API13／7.3 節點） |
-| **MeterWay** | 1.0.17.0 | 搭配 IINACT 或 ACT 顯示即時戰鬥統計；由 2025-04-12 最後正式版最小移植至 API13 |
-| **Death Recap** | 1.13.2.2 | 顯示死亡前的傷害、治療、增益、減益與護盾紀錄（2025-08-10 API13 節點） |
 
 ## 為什麼需要這個倉庫？
 
@@ -74,9 +66,6 @@ https://raw.githubusercontent.com/cycleapple/DalamudPlugins-TW/main/repo.json
 - [PlayerWatchlist](https://github.com/cycleapple/PlayerWatchlist)
 - [Action Timeline Replacement](https://github.com/papapachin/ActionTimelineReplacement)
 - [Loporrit Sync 官方](https://github.com/loporrit/LoporritSync)
-- [TriadBuddy 官方](https://github.com/MgAl2O4/FFTriadBuddyDalamud)
-- [MeterWay 官方](https://github.com/CondeSaheki/MeterWay)
-- [Death Recap 官方](https://github.com/Kouzukii/ffxiv-deathrecap)
 
 ## 修改說明
 
