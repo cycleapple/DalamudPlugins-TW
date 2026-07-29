@@ -43,6 +43,9 @@ https://raw.githubusercontent.com/cycleapple/DalamudPlugins-TW/main/repo.json
 | **High FPS Physics Fix** | 8.3.0.1 | 降低物理效果更新頻率，改善高 FPS 下的物理表現（2025-08-06 API13 節點，繁中介面） |
 | **Orchestrion Plugin** | 2.2.0.12 | 瀏覽、辨識及變更遊戲內背景音樂（2025-08-07 API13 節點） |
 | **CrossUp** | 1.7.1.13 | 自訂十字快捷欄的外觀、位置與擴展按住操作（2025-09-03 API13／7.31 節點） |
+| **TriadBuddy** | 1.13.0.1 | 九宮幻卡 NPC 對戰求解、牌組分析與收藏資訊擴充（2025-08-11 API13／7.3 節點） |
+| **MeterWay** | 1.0.17.0 | 搭配 IINACT 或 ACT 顯示即時戰鬥統計；由 2025-04-12 最後正式版最小移植至 API13 |
+| **Death Recap** | 1.13.2.2 | 顯示死亡前的傷害、治療、增益、減益與護盾紀錄（2025-08-10 API13 節點） |
 
 ## 為什麼需要這個倉庫？
 
@@ -71,6 +74,9 @@ https://raw.githubusercontent.com/cycleapple/DalamudPlugins-TW/main/repo.json
 - [PlayerWatchlist](https://github.com/cycleapple/PlayerWatchlist)
 - [Action Timeline Replacement](https://github.com/papapachin/ActionTimelineReplacement)
 - [Loporrit Sync 官方](https://github.com/loporrit/LoporritSync)
+- [TriadBuddy 官方](https://github.com/MgAl2O4/FFTriadBuddyDalamud)
+- [MeterWay 官方](https://github.com/CondeSaheki/MeterWay)
+- [Death Recap 官方](https://github.com/Kouzukii/ffxiv-deathrecap)
 
 ## 修改說明
 
