@@ -29,15 +29,15 @@ https://raw.githubusercontent.com/cycleapple/DalamudPlugins-TW/main/repo.json
 |------|------|------|
 | **Penumbra** | 1.5.1.23 | Mod 載入器與管理工具（API13 上游 1.5.1.1 基底；修正 TC 結構、繁中 Excel、shader handle 誤判、空資源路徑、一般 ZIP／PMP 匯入，並可唯讀載入新版 V4 模組） |
 | **Simple Heels** | 0.10.7.4 | 穿著 Mod 高跟鞋時調整角色位置 |
-| **Brio** | 0.5.2.0 | GPose 增強工具，用於拍照與動作控制 |
-| **Ktisis v0.3** | 0.3.14.4 | 集體動作模式的場景、角色姿勢、鏡頭與燈光編輯工具；修正舊設定遷移尚未載入及設定空區段造成的設定視窗崩潰 |
-| **Glamourer** | 1.5.0.9 | 外觀修改與儲存工具（需要 Penumbra）- **已修正台服 TC 繁中 Excel 語言頁與即時玩家辨識** |
-| **Customize+** | 2.0.7.29 | 透過編輯骨骼參數自訂角色外觀 - **已修正台服角色世界 ID 驗證** |
+| **Brio** | 0.5.2.1 | GPose 增強工具，用於拍照與動作控制；補齊目前版本的繁中介面與 291 個語系鍵 |
+| **Ktisis v0.3** | 0.3.14.5 | 集體動作模式的場景、角色姿勢、鏡頭與燈光編輯工具；補齊 575 個繁中語系鍵，並讓既有 `en_US` 設定自動載入繁中 |
+| **Glamourer** | 1.5.0.10 | 外觀修改與儲存工具（需要 Penumbra）- **已修正台服 TC 繁中 Excel 語言頁與即時玩家辨識，並補齊設計、染色、自動化與裝備介面的繁中翻譯** |
+| **Customize+** | 2.0.7.30 | 透過編輯骨骼參數自訂角色外觀 - **已修正台服角色世界 ID 驗證，並補齊設定、範本、設定檔及骨骼編輯介面的繁中翻譯** |
 | **Aetherment** | 0.4.0.0 | Mod 瀏覽、安裝與自動更新工具 |
 | **PlayerWatchlist** | 1.0.0.1 | 黑白名單玩家追蹤系統，偵測周圍玩家並顯示連結線與通知 |
 | **Action Timeline Replacement** | 1.0.0.1 | 部分特效 MOD 使用，用於替換動畫和特效 |
 | **Simple Tweaks** | 1.10.11.1 | 多項可設定的遊戲便利性調整 |
-| **Loporrit Sync** | 1.0.9.2 | 與配對玩家同步 Penumbra Mod 與 Glamourer 外觀（需要 Penumbra 1.5.1.23、Glamourer 1.5.0.9） |
+| **Loporrit Sync** | 1.0.9.2 | 與配對玩家同步 Penumbra Mod 與 Glamourer 外觀（需要 Penumbra 1.5.1.23、Glamourer 1.5.0.10） |
 
 ## 為什麼需要這個倉庫？
 
@@ -98,7 +98,7 @@ https://raw.githubusercontent.com/cycleapple/DalamudPlugins-TW/main/repo.json
 
 - 保留上游原始的 `Penumbra >= 1.5.1.0` 相容性條件
 - 已用台服 Dalamud `13.0.0.8` 編譯
-- 需要本倉庫的 Penumbra `1.5.1.23` 與 Glamourer `1.5.0.9`
+- 需要本倉庫的 Penumbra `1.5.1.23` 與 Glamourer `1.5.0.10`
 - SignalR、MessagePack 與 Hosting 相依套件已更新至 `9.0.18`，NuGet 弱點掃描無已知項目
 
 ### Glamourer
