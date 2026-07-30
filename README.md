@@ -27,7 +27,7 @@ https://raw.githubusercontent.com/cycleapple/DalamudPlugins-TW/main/repo.json
 
 | 插件 | 版本 | 說明 |
 |------|------|------|
-| **Penumbra** | 1.5.1.24 | Mod 載入器與管理工具（API13 上游 1.5.1.1 基底；修正 TC 結構、繁中 Excel、shader handle 誤判、空資源路徑、一般 ZIP／PMP 匯入，可唯讀載入新版 V4 模組，並補齊 35 個既有 UI 檔的繁中介面） |
+| **Penumbra** | 1.5.1.25 | Mod 載入器與管理工具（API13 上游 1.5.1.1 基底；修正台服玩家辨識、TC 結構、繁中 Excel、shader handle 誤判、空資源路徑、一般 ZIP／PMP 匯入，可唯讀載入新版 V4 模組，並補齊 35 個既有 UI 檔的繁中介面） |
 | **Simple Heels** | 0.10.7.5 | 穿著 Mod 高跟鞋時調整角色位置；補齊角色／群組、暫時偏移、模型與裝備偏移及快捷鍵介面的繁中翻譯 |
 | **Brio** | 0.5.2.1 | GPose 增強工具，用於拍照與動作控制；補齊目前版本的繁中介面與 291 個語系鍵 |
 | **Ktisis v0.3** | 0.3.14.5 | 集體動作模式的場景、角色姿勢、鏡頭與燈光編輯工具；補齊 575 個繁中語系鍵，並讓既有 `en_US` 設定自動載入繁中 |
@@ -37,7 +37,7 @@ https://raw.githubusercontent.com/cycleapple/DalamudPlugins-TW/main/repo.json
 | **PlayerWatchlist** | 1.0.0.1 | 黑白名單玩家追蹤系統，偵測周圍玩家並顯示連結線與通知 |
 | **Action Timeline Replacement** | 1.0.0.1 | 部分特效 MOD 使用，用於替換動畫和特效 |
 | **Simple Tweaks** | 1.10.11.1 | 多項可設定的遊戲便利性調整 |
-| **Loporrit Sync** | 1.0.9.2 | 與配對玩家同步 Penumbra Mod 與 Glamourer 外觀（需要 Penumbra 1.5.1.24、Glamourer 1.5.0.10） |
+| **Loporrit Sync** | 1.0.9.2 | 與配對玩家同步 Penumbra Mod 與 Glamourer 外觀（需要 Penumbra 1.5.1.25、Glamourer 1.5.0.10） |
 
 ## 為什麼需要這個倉庫？
 
@@ -71,7 +71,7 @@ https://raw.githubusercontent.com/cycleapple/DalamudPlugins-TW/main/repo.json
 
 ### Penumbra
 
-目前正式版本為 `1.5.1.24`，以 2025-08-28 發布、仍使用 Dalamud API13 的上游 `1.5.1.1` 為基礎，來源位於 [cycleapple/Penumbra 的 api13-tw-1.5.1 分支](https://github.com/cycleapple/Penumbra/tree/api13-tw-1.5.1)。
+目前正式版本為 `1.5.1.25`，以 2025-08-28 發布、仍使用 Dalamud API13 的上游 `1.5.1.1` 為基礎，來源位於 [cycleapple/Penumbra 的 api13-tw-1.5.1 分支](https://github.com/cycleapple/Penumbra/tree/api13-tw-1.5.1)。
 
 修改內容：
 
@@ -88,7 +88,7 @@ https://raw.githubusercontent.com/cycleapple/DalamudPlugins-TW/main/repo.json
 - 回移上游 V4 模組唯讀相容層：讀取新版 Penumbra 內嵌於 `meta.json` 的預設資料與選項群組
 - 禁止 API13 版本覆寫 V4 模組，並拒絕尚未支援的 V5 以上格式，避免破壞國際服新版 Penumbra 的資料
 
-`1.5.1.24` 保留既有台服 shader、空路徑與 ZIP／PMP 匯入修正，加入新版 Penumbra V4 模組的唯讀載入能力，並補齊設定、收藏集、模組面板、匯入、資源與進階編輯介面的繁中翻譯。V3 模組仍沿用原本的檔案與儲存流程；V4 模組可讀取內嵌預設資料及選項群組，但本版本不會寫回 V4 模組。若模組宣告 API13 不支援的新功能，仍會安全地拒絕載入，而不會靜默套用不完整內容。
+`1.5.1.25` 保留既有台服 shader、空路徑與 ZIP／PMP 匯入修正，加入新版 Penumbra V4 模組的唯讀載入能力，並補回台服玩家名稱與世界資料驗證，使「目前目標」及手動名稱搜尋可辨識玩家角色。V3 模組仍沿用原本的檔案與儲存流程；V4 模組可讀取內嵌預設資料及選項群組，但本版本不會寫回 V4 模組。若模組宣告 API13 不支援的新功能，仍會安全地拒絕載入，而不會靜默套用不完整內容。
 
 如需緊急回退，GitHub Release 中仍保留 `1.5.0.13` 與停用 Shader Replacement Fixer 的 `1.5.0.11`；但 Loporrit Sync 不支援回退到 `1.5.0.x`。
 
@@ -98,7 +98,7 @@ https://raw.githubusercontent.com/cycleapple/DalamudPlugins-TW/main/repo.json
 
 - 保留上游原始的 `Penumbra >= 1.5.1.0` 相容性條件
 - 已用台服 Dalamud `13.0.0.8` 編譯
-- 需要本倉庫的 Penumbra `1.5.1.24` 與 Glamourer `1.5.0.10`
+- 需要本倉庫的 Penumbra `1.5.1.25` 與 Glamourer `1.5.0.10`
 - SignalR、MessagePack 與 Hosting 相依套件已更新至 `9.0.18`，NuGet 弱點掃描無已知項目
 
 ### Glamourer
