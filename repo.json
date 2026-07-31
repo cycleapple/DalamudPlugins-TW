@@ -101,8 +101,8 @@
     "Author": "Ottermandias",
     "Name": "Glamourer",
     "InternalName": "Glamourer",
-    "AssemblyVersion": "1.5.0.11",
-    "TestingAssemblyVersion": "1.5.0.11",
+    "AssemblyVersion": "1.5.0.12",
+    "TestingAssemblyVersion": "1.5.0.12",
     "RepoUrl": "https://github.com/cycleapple/Glamourer/tree/api13-tw",
     "ApplicableVersion": "any",
     "Punchline": "修改及儲存玩家外觀。",
@@ -116,10 +116,11 @@
     "LoadPriority": 0,
     "LoadRequiredState": 0,
     "LoadSync": false,
-    "DownloadLinkInstall": "https://github.com/cycleapple/DalamudPlugins-TW/releases/download/plugins-api13/Glamourer-1.5.0.11.zip",
-    "DownloadLinkTesting": "https://github.com/cycleapple/DalamudPlugins-TW/releases/download/plugins-api13/Glamourer-1.5.0.11.zip",
-    "DownloadLinkUpdate": "https://github.com/cycleapple/DalamudPlugins-TW/releases/download/plugins-api13/Glamourer-1.5.0.11.zip",
-    "IconUrl": "https://raw.githubusercontent.com/cycleapple/DalamudPlugins-TW/main/icons/Glamourer.png"
+    "DownloadLinkInstall": "https://github.com/cycleapple/DalamudPlugins-TW/releases/download/plugins-api13/Glamourer-1.5.0.12.zip",
+    "DownloadLinkTesting": "https://github.com/cycleapple/DalamudPlugins-TW/releases/download/plugins-api13/Glamourer-1.5.0.12.zip",
+    "DownloadLinkUpdate": "https://github.com/cycleapple/DalamudPlugins-TW/releases/download/plugins-api13/Glamourer-1.5.0.12.zip",
+    "IconUrl": "https://raw.githubusercontent.com/cycleapple/DalamudPlugins-TW/main/icons/Glamourer.png",
+    "Changelog": "修正台服環境下 Brio 生成的玩家型分身因世界資料驗證失敗，未出現在 Actors 清單且無法套用 Glamourer 設計的問題。"
   },
   {
     "Author": "Risa",
