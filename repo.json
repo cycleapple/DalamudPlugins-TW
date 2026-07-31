@@ -52,8 +52,8 @@
     "Author": "Asgard, Minmoose and Contributors",
     "Name": "Brio",
     "InternalName": "Brio",
-    "AssemblyVersion": "0.5.2.1",
-    "TestingAssemblyVersion": "0.5.2.1",
+    "AssemblyVersion": "0.5.2.2",
+    "TestingAssemblyVersion": "0.5.2.2",
     "RepoUrl": "https://github.com/cycleapple/Brio",
     "ApplicableVersion": "any",
     "Punchline": "Enhanced GPosing.",
@@ -70,7 +70,8 @@
     "DownloadLinkInstall": "https://github.com/cycleapple/DalamudPlugins-TW/releases/download/plugins-api13/Brio.zip",
     "DownloadLinkTesting": "https://github.com/cycleapple/DalamudPlugins-TW/releases/download/plugins-api13/Brio.zip",
     "DownloadLinkUpdate": "https://github.com/cycleapple/DalamudPlugins-TW/releases/download/plugins-api13/Brio.zip",
-    "IconUrl": "https://raw.githubusercontent.com/cycleapple/DalamudPlugins-TW/main/icons/Brio.png"
+    "IconUrl": "https://raw.githubusercontent.com/cycleapple/DalamudPlugins-TW/main/icons/Brio.png",
+    "Changelog": "修正場景管理器在角色重繪或階層變動時修改集合造成的介面錯誤，並修正重繪開始事件誤標為完成事件。"
   },
   {
     "Author": "Chirp",
