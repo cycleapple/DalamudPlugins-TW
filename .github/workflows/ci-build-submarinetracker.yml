@@ -1,0 +1,187 @@
+name: Build and Release SubmarineTracker
+
+on:
+  workflow_dispatch:
+    inputs:
+      ref:
+        description: 'Git ref of SubmarineTracker to build (branch, tag, or commit)'
+        required: false
+        default: 'master'
+      version:
+        description: 'Package version to use (overrides project version)'
+        required: false
+        default: ''
+      create_release:
+        description: 'Create or update release and upload asset'
+        required: false
+        default: 'true'
+
+jobs:
+  build-and-package:
+    runs-on: windows-latest
+    timeout-minutes: 120
+
+    steps:
+      - name: Checkout this distribution repo
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 1
+
+      - name: Checkout SubmarineTracker upstream
+        uses: actions/checkout@v4
+        with:
+          repository: Infiziert90/SubmarineTracker
+          path: upstream/SubmarineTracker
+          ref: ${{ github.event.inputs.ref }}
+
+      - name: Checkout yanmucorp/Dalamud (with submodules)
+        uses: actions/checkout@v4
+        with:
+          repository: yanmucorp/Dalamud
+          path: upstream/Dalamud
+          submodules: recursive
+
+      - name: Setup .NET SDK (pin to Dalamud-required 9.0)
+        uses: actions/setup-dotnet@v4
+        with:
+          dotnet-version: '9.0.x'
+
+      - name: Ensure dev path exists
+        run: |
+          $dev = "$env:APPDATA\XIVLauncher\addon\Hooks\dev"
+          Write-Host "Dev path: $dev"
+          New-Item -ItemType Directory -Force -Path $dev | Out-Null
+
+      - name: Install Visual Studio Build Tools workloads (Native + Managed) if missing
+        if: runner.os == 'Windows'
+        run: |
+          Write-Host "Checking for existing Visual Studio build tools (cl.exe and msbuild.exe)..."
+          $cl = Get-Command cl.exe -ErrorAction SilentlyContinue
+          $msb = Get-Command msbuild -ErrorAction SilentlyContinue
+          if ($cl -and $msb) {
+            Write-Host "Found cl.exe at $($cl.Source) and msbuild at $($msb.Source). Skipping VS Build Tools installation."
+            exit 0
+          }
+
+          Write-Host "Missing required build tools. Installing Visual Studio Build Tools bootstrapper..."
+          $installer = Join-Path $env:TEMP 'vs_BuildTools.exe'
+          Write-Host "Downloading Visual Studio Build Tools bootstrapper to $installer"
+          Invoke-WebRequest -Uri 'https://aka.ms/vs/17/release/vs_BuildTools.exe' -OutFile $installer
+          Write-Host "Installing workloads: NativeBuildTools, ManagedDesktopBuildTools (this may take 10+ minutes)"
+          & $installer --quiet --wait --norestart --nocache --installPath 'C:\BuildTools' --add Microsoft.VisualStudio.Workload.NativeBuildTools --add Microsoft.VisualStudio.Workload.ManagedDesktopBuildTools --includeRecommended
+          $rc = $LASTEXITCODE
+          if ($rc -ne 0) {
+            Write-Host "Visual Studio installer exited with code $rc"
+            exit $rc
+          }
+          Write-Host "Visual Studio Build Tools installation completed."
+
+      - name: Build Dalamud (best-effort)
+        working-directory: upstream/Dalamud
+        run: |
+          Write-Host 'Restoring and building Dalamud solution (may require Visual Studio toolchain and will take several minutes)'
+          dotnet restore
+          dotnet build Dalamud.sln -c Release
+        continue-on-error: false
+
+      - name: Copy Dalamud dev assemblies to dev path
+        if: ${{ always() }}
+        run: |
+          $dev = "$env:APPDATA\XIVLauncher\addon\Hooks\dev"
+          $srcCandidates = @("upstream/Dalamud/Dalamud/bin/Release/net*/", "upstream/Dalamud/Dalamud/bin/Release/**/")
+          Write-Host "Looking for built Dalamud assemblies"
+          $found = $false
+          foreach ($pat in $srcCandidates) {
+            Write-Host "Checking: $pat"
+            $matches = Get-ChildItem -Path $pat -Filter 'Dalamud.dll' -Recurse -ErrorAction SilentlyContinue
+            if ($matches) {
+              foreach ($m in $matches) {
+                Write-Host "Copying $($m.FullName) -> $dev"
+                Copy-Item -Path $m.FullName -Destination $dev -Force
+                $found = $true
+              }
+            }
+          }
+          if (-not $found) {
+            Write-Host 'Warning: Could not find built Dalamud.dll. The SubmarineTracker build may still succeed if it uses NuGet/package references.'
+          }
+
+      - name: Build SubmarineTracker
+        working-directory: upstream/SubmarineTracker
+        env:
+          DALAMUD_HOME: "$env:APPDATA\\XIVLauncher\\addon\\Hooks\\dev"
+        run: |
+          dotnet restore
+          dotnet build SubmarineTracker.sln -c Release
+
+      - name: Determine package version
+        id: ver
+        run: |
+          $inputVer = '${{ github.event.inputs.version }}'
+          if ($inputVer -and $inputVer.Trim().Length -gt 0) {
+            Write-Host "Using provided version: $inputVer"
+            echo "version=$inputVer" | Out-File -Encoding ASCII -FilePath $env:GITHUB_OUTPUT
+            exit 0
+          }
+          # Read project version from csproj
+          $csproj = 'upstream\SubmarineTracker\SubmarineTracker\SubmarineTracker.csproj'
+          [xml]$xm = Get-Content $csproj
+          $ns = @{msb='http://schemas.microsoft.com/developer/msbuild/2003'}
+          $ver = $xm.Project.PropertyGroup.Version
+          if (-not $ver) { $ver = (Get-Content $csproj | Select-String -Pattern '<Version>(.*)</Version>' | ForEach-Object { $_.Matches[0].Groups[1].Value } | Select-Object -First 1) }
+          if (-not $ver) { $ver = '0.0.0.0' }
+          Write-Host "Extracted version: $ver"
+          echo "version=$ver" | Out-File -Encoding ASCII -FilePath $env:GITHUB_OUTPUT
+
+      - name: Package plugin ZIP
+        run: |
+          $version = '${{ steps.ver.outputs.version }}'
+          $outDir = Join-Path $PWD 'plugins'
+          New-Item -ItemType Directory -Force -Path $outDir | Out-Null
+          $projOut = Get-ChildItem -Path 'upstream\SubmarineTracker\SubmarineTracker\bin\x64\Release' -Filter '*.dll' -Recurse | Select-Object -First 1
+          if (-not $projOut) { Write-Error 'Could not find built plugin DLL'; exit 1 }
+          $dll = $projOut.FullName
+          $manifest = 'upstream\SubmarineTracker\SubmarineTracker.json'
+          if (-not (Test-Path $manifest)) { $manifest = 'upstream\SubmarineTracker\SubmarineTracker\SubmarineTracker.json' }
+          if (-not (Test-Path $manifest)) { Write-Error 'Could not find plugin manifest JSON'; exit 1 }
+          $zipName = "SubmarineTracker-$version.zip"
+          $zipPath = Join-Path $outDir $zipName
+          if (Test-Path $zipPath) { Remove-Item $zipPath -Force }
+          Write-Host "Creating $zipPath"
+          Add-Type -AssemblyName System.IO.Compression.FileSystem
+          [System.IO.Compression.ZipFile]::CreateFromDirectory((Split-Path $dll -Parent), $zipPath)
+          # The above zips the whole output folder; ensure manifest is included
+          if (-not (Select-String -Path $zipPath -Pattern 'SubmarineTracker.json' -Quiet -ErrorAction SilentlyContinue)) {
+            # Create new zip with specific files
+            if (Test-Path $zipPath) { Remove-Item $zipPath -Force }
+            $temp = Join-Path $env:TEMP 'st_pkg'
+            if (Test-Path $temp) { Remove-Item $temp -Recurse -Force }
+            New-Item -ItemType Directory -Path $temp | Out-Null
+            Copy-Item -Path $dll -Destination $temp -Force
+            Copy-Item -Path $manifest -Destination $temp -Force
+            [System.IO.Compression.ZipFile]::CreateFromDirectory($temp, $zipPath)
+            Remove-Item $temp -Recurse -Force
+          }
+          Write-Host "Package saved: $zipPath"
+
+      - name: Show plugins dir
+        run: dir plugins -Force
+
+      - name: Create or update release (plugins-api13)
+        if: ${{ github.event.inputs.create_release == 'true' }}
+        uses: actions/create-release@v1
+        with:
+          tag_name: 'plugins-api13'
+          release_name: 'Plugin Binaries (API13)'
+          draft: false
+          prerelease: false
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+
+      - name: Upload asset to release
+        if: ${{ github.event.inputs.create_release == 'true' }}
+        uses: softprops/action-gh-release@v1
+        with:
+          files: plugins/*.zip
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
