@@ -1,0 +1,55 @@
+name: Publish release assets
+
+on:
+  release:
+    types:
+      - published
+
+jobs:
+  publish-assets:
+    if: github.event.release.draft == false
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Validate distribution manifest
+        run: |
+          python - <<'PY'
+          import json
+          from pathlib import Path
+
+          repo_path = Path('repo.json')
+          data = json.loads(repo_path.read_text(encoding='utf-8'))
+          if not isinstance(data, list):
+              raise SystemExit('repo.json root must be a JSON array')
+
+          required_fields = [
+              'Author', 'Name', 'InternalName', 'AssemblyVersion', 'TestingAssemblyVersion',
+              'RepoUrl', 'ApplicableVersion', 'Punchline', 'Description',
+              'DalamudApiLevel', 'TestingDalamudApiLevel', 'DownloadCount', 'LastUpdate',
+              'LoadPriority', 'LoadRequiredState', 'LoadSync', 'DownloadLinkInstall',
+              'DownloadLinkTesting', 'DownloadLinkUpdate', 'IconUrl', 'IsHide', 'IsTestingExclusive'
+          ]
+
+          for index, entry in enumerate(data, start=1):
+              if not isinstance(entry, dict):
+                  raise SystemExit(f'Entry {index} must be an object')
+              for field in required_fields:
+                  if field not in entry:
+                      raise SystemExit(f'Entry {index} missing required field: {field}')
+              if entry['DalamudApiLevel'] != 13:
+                  raise SystemExit(f'Entry {index} has non-API13 DalamudApiLevel: {entry["DalamudApiLevel"]}')
+              if entry['TestingDalamudApiLevel'] != 13:
+                  raise SystemExit(f'Entry {index} has non-API13 TestingDalamudApiLevel: {entry["TestingDalamudApiLevel"]}')
+
+          print('repo.json validation passed')
+          PY
+
+      - name: Upload plugin package assets
+        uses: softprops/action-gh-release@v1
+        with:
+          files: plugins/*.zip
+          overwrite: true
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}

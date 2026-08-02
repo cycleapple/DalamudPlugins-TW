@@ -266,5 +266,29 @@
     "DownloadLinkTesting": "https://github.com/cycleapple/DalamudPlugins-TW/releases/download/plugins-api13/LoporritSync-1.0.9.2.zip",
     "DownloadLinkUpdate": "https://github.com/cycleapple/DalamudPlugins-TW/releases/download/plugins-api13/LoporritSync-1.0.9.2.zip",
     "IconUrl": "https://raw.githubusercontent.com/cycleapple/DalamudPlugins-TW/main/icons/LoporritSync.png"
+  },
+  {
+    "Author": "Infi",
+    "Name": "Submarine Tracker",
+    "InternalName": "SubmarineTracker",
+    "AssemblyVersion": "2.0.5.6",
+    "TestingAssemblyVersion": "2.0.5.6",
+    "RepoUrl": "https://github.com/Infiziert90/SubmarineTracker",
+    "ApplicableVersion": "any",
+    "Punchline": "You do not talk about Fight Club, same for Submarines",
+    "Description": "Submarine Tracker: tracker, builder, overlays, notifications and loot management. (Source: Infiziert90/SubmarineTracker)",
+    "DalamudApiLevel": 13,
+    "TestingDalamudApiLevel": 13,
+    "IsHide": false,
+    "IsTestingExclusive": false,
+    "DownloadCount": 0,
+    "LastUpdate": 0,
+    "LoadPriority": 0,
+    "LoadRequiredState": 0,
+    "LoadSync": false,
+    "DownloadLinkInstall": "https://github.com/cycleapple/DalamudPlugins-TW/releases/download/plugins-api13/SubmarineTracker-2.0.5.6.zip",
+    "DownloadLinkTesting": "https://github.com/cycleapple/DalamudPlugins-TW/releases/download/plugins-api13/SubmarineTracker-2.0.5.6.zip",
+    "DownloadLinkUpdate": "https://github.com/cycleapple/DalamudPlugins-TW/releases/download/plugins-api13/SubmarineTracker-2.0.5.6.zip",
+    "IconUrl": "https://raw.githubusercontent.com/cycleapple/DalamudPlugins-TW/main/icons/SubmarineTracker.png"
   }
 ]
